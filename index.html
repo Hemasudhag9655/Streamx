@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StreamX</title>
+  <link rel="stylesheet" href="net.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIbXCK83ymOqZSgHGGwGuoghsE0AJNNyNDGg&s">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  width: 150px;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+.lang {
+  background: transparent;
+  color: white;
+  border: 1px solid #aaa;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.signin {
+  background: red;
+  color: white;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.75),
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.75)
+    ),
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.6)
+    ),
+    url("https://img.freepik.com/premium-photo/black-red-abstract-gaming-background-generative-ai_913967-5225.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 200px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* EMAIL BOX */
+.email-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.email-box input {
+  width: 380px;
+  padding: 16px;
+  font-size: 16px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #777;
+  color: white;
+  border-radius: 4px;
+}
+
+.email-box button {
+  background: red;
+  color: white;
+  font-size: 18px;
+  padding: 16px 28px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.email-box button:hover {
+  background: #e50914;
+}
+
+/* TRENDING SECTION */
+/* TRENDING SECTION */
+.trending {
+  position: relative;
+  padding: 60px 50px;
+  background: black;
+}
+
+.trending h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* Horizontal scrolling row */
+.trending-row {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 40px;
+}
+
+.trending-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.rank-card {
+  position: relative;
+  min-width: 200px;
+  transition: transform 0.3s;
+}
+
+/* Movie image */
+.rank-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* BIG ranking number – ON TOP */
+.rank {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  font-size: 110px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 4px white;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover zoom */
+.rank-card:hover {
+  transform: scale(1.15);
+  z-index: 5;
+}
+
+
+
+
+
+/* Hover zoom */
+.rank-card:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+
+
+
+/* Arrows */
+.trend-arrow {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 20;
+  border-radius: 8px;
+}
+
+.trend-arrow.left {
+  left: 10px;
+}
+
+.trend-arrow.right {
+  right: 10px;
+}
+
+.trend-arrow:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+
+/* FAQ SECTION */
+/* FAQ FIXED */
+.faq {
+  padding: 70px 12%;
+  background: black;
+}
+
+.faq h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+/* Question bar */
+.faq-question {
+  background: #303030;
+  color: white;
+  padding: 22px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PLUS / CLOSE ICON */
+.faq-question span {
+  font-size: 32px;
+}
+
+/* Answer hidden by default */
+.faq-answer {
+  background: #303030;
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 22px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* When open */
+.faq-item.active .faq-answer {
+  padding: 22px;
+  max-height: 300px;
+}
+
+.faq-text {
+  margin: 40px 0 20px;
+  font-size: 18px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <h2 class="logo" style="font-size: 28px;">StreamX</h2>
+
+
+  <div class="header-right">
+    <select class="lang">
+    
+      <option>English</option>
+      <option>हिन्दी</option>
+    </select>
+    <button class="signin">Sign In</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Unlimited movies, shows and more</h1>
+    <p>
+      Ready to watch? Enter your email to create or restart your membership.
+    </p>
+
+   <div class="email-box">
+  <input type="email" id="emailInput" placeholder="Email address">
+  <button onclick="handleGetStarted()">Get Started ➤</button>
+</div>
+
+</section>
+
+<!-- TRENDING NOW -->
+<section class="trending">
+  <h2>Trending Now</h2>
+
+  <!-- Arrows -->
+  <button class="trend-arrow left" onclick="scrollTrending(-1)">❮</button>
+  <button class="trend-arrow right" onclick="scrollTrending(1)">❯</button>
+
+  <div class="trending-row" id="trendingRow">
+
+    <div class="rank-card">
+      <span class="rank">1</span>
+      <img src="https://m.media-amazon.com/images/I/61YohCoVM3L._AC_UF894,1000_QL80_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">2</span>
+      <img src="https://images.ctfassets.net/22n7d68fswlw/GH7ANpjyS080xlxYfaYVZ/9233d5efea4bb92c56bf0ee6855900f5/poster-baahubali.webp">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">3</span>
+      <img src="https://image.tmdb.org/t/p/original/q2IiPRSXPOZ6qVRj36WRAYEQyHs.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">4</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BNTU0ZjYxOWItOWViMC00YWVlLWJlMGUtZjc1YWU0NTlhY2ZhXkEyXkFqcGc@._V1_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">5</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BN2ZiZWU3MzMtNGM5OC00ZWVkLTkxNjUtMTYwZGU4MzgxYzk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">6</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BMmU1NWM4ZTAtZGM0Ny00NTVmLTgxZGItZWUxZTk4Yjg0NWEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">7</span>
+      <img src="https://i.pinimg.com/736x/cb/61/03/cb610365ad8830243ce88b1f98b63d20.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">8</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BOGRjMzM1ZmUtMjk0Yi00NzA0LTk3ZWYtZWM3MWY3M2EwMjBhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">9</span>
+      <img src="https://image.tmdb.org/t/p/original/bD7DPVsOkCLzxz2mVSd73ISKdyg.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">10</span>
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/RRR_Poster.jpg/250px-RRR_Poster.jpg">
+    </div>
+
+
+    <!-- add more movies same way -->
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What is StreamX?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      StreamX is a streaming service that offers a wide variety of TV shows,
+      movies, anime, documentaries, and more.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How much does StreamX cost?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Watch StreamX on your smartphone, tablet, Smart TV, laptop, or streaming
+      device for free if logined in.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Where can I watch?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      Watch anywhere, anytime. Sign in with your StreamX account to watch
+      instantly on the web or on devices that support the StreamX app.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      How do I cancel?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      StreamX is flexible. There are no annoying contracts and no commitments.
+      You can easily cancel your account online anytime.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What can I watch on StreamX?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      StreamX has an extensive library of feature films, documentaries, TV
+      shows, anime, award-winning StreamX originals, and more.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is StreamX good for kids?
+      <span>+</span>
+    </div>
+    <div class="faq-answer">
+      The StreamX Kids experience is included in your membership to give parents
+      control while kids enjoy family-friendly content.
+    </div>
+  </div>
+
+  <p class="faq-text">
+    Ready to watch? Enter your email to create or restart your membership.
+  </p>
+<div class="email-box">
+  <input type="email" id="emailInput" placeholder="Email address">
+  <button onclick="handleGetStarted()">Get Started ➤</button>
+</div>
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+
+<script src="net.js"></script>
+
+
+</body>
+</html>

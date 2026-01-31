@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StreamX - Shows</title>
+  <link rel="stylesheet" href="net.css">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIbXCK83ymOqZSgHGGwGuoghsE0AJNNyNDGg&s">
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  width: 150px;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+.trending {
+  position: relative;
+  padding: 60px 50px;
+  background: black;
+}
+
+.trending h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* Horizontal scrolling row */
+.trending-row {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 40px;
+}
+
+.trending-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.rank-card {
+  position: relative;
+  min-width: 200px;
+  transition: transform 0.3s;
+}
+
+/* Movie image */
+.rank-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* BIG ranking number – ON TOP */
+.rank {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  font-size: 110px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 4px white;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover zoom */
+.rank-card:hover {
+  transform: scale(1.15);
+  z-index: 5;
+}
+
+
+
+
+
+/* Hover zoom */
+.rank-card:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+
+
+
+/* Arrows */
+.trend-arrow {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 20;
+  border-radius: 8px;
+}
+
+.trend-arrow.left {
+  left: 10px;
+}
+
+.trend-arrow.right {
+  right: 10px;
+}
+
+.trend-arrow:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <h1 class="logo">StreamX</h1>
+    <nav>
+      <a href="streamx.html">Home</a>
+      <a href="shows.html" class="active">Shows</a>
+      <a href="mynet.html">My StreamX</a>
+    </nav>
+  </div>
+</header>
+
+
+<br>
+<br>
+
+
+<section class="trending">
+  <h2>Trending Now</h2>
+
+  <!-- Arrows -->
+  <button class="trend-arrow left" onclick="scrollTrending(-1)">❮</button>
+  <button class="trend-arrow right" onclick="scrollTrending(1)">❯</button>
+
+  <div class="trending-row" id="trendingRow">
+
+    <div class="rank-card">
+      <span class="rank">1</span>
+      <img src="https://m.media-amazon.com/images/I/61YohCoVM3L._AC_UF894,1000_QL80_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">2</span>
+      <img src="https://images.ctfassets.net/22n7d68fswlw/GH7ANpjyS080xlxYfaYVZ/9233d5efea4bb92c56bf0ee6855900f5/poster-baahubali.webp">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">3</span>
+      <img src="https://image.tmdb.org/t/p/original/q2IiPRSXPOZ6qVRj36WRAYEQyHs.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">4</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BNTU0ZjYxOWItOWViMC00YWVlLWJlMGUtZjc1YWU0NTlhY2ZhXkEyXkFqcGc@._V1_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">5</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BN2ZiZWU3MzMtNGM5OC00ZWVkLTkxNjUtMTYwZGU4MzgxYzk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">6</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BMmU1NWM4ZTAtZGM0Ny00NTVmLTgxZGItZWUxZTk4Yjg0NWEyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">7</span>
+      <img src="https://i.pinimg.com/736x/cb/61/03/cb610365ad8830243ce88b1f98b63d20.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">8</span>
+      <img src="https://m.media-amazon.com/images/M/MV5BOGRjMzM1ZmUtMjk0Yi00NzA0LTk3ZWYtZWM3MWY3M2EwMjBhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">9</span>
+      <img src="https://image.tmdb.org/t/p/original/bD7DPVsOkCLzxz2mVSd73ISKdyg.jpg">
+    </div>
+
+    <div class="rank-card">
+      <span class="rank">10</span>
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/RRR_Poster.jpg/250px-RRR_Poster.jpg">
+    </div>
+
+
+    <!-- add more movies same way -->
+  </div>
+</section>
+
+<section class="row">
+  <h2>Top Shows watched more</h2>
+  <!-- arrows -->
+  <button class="row-arrow left" onclick="scrollMovies(-1)">❮</button>
+  <button class="row-arrow right" onclick="scrollMovies(1)">❯</button>
+
+  <!-- movie images --> 
+
+  <div class="movies">
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BMGE5Y2ZiNWYtODA4Mi00M2YxLWFjNzQtZWVmZDRiNmE1YjVjXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/RAoUbyhmR08">
+
+      <img
+    class="movie-poster"
+    src="https://images.justwatch.com/poster/339094482/s718/his-and-hers.jpg"
+    data-trailer="https://www.youtube.com/embed/8_szlvBLll0">
+
+    <img
+    class="movie-poster"
+    src="https://upload.wikimedia.org/wikipedia/en/1/12/Jumanji_-The_Next_Level_film_poster.jpg"
+    data-trailer="https://www.youtube.com/embed/2QKg5SZ_35I">
+
+          <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/I/91nyqgco29L._AC_UF1000,1000_QL80_.jpg"
+    data-trailer="https://www.youtube.com/embed/ByAn8DF8Ykk"> 
+
+
+      <img
+    class="movie-poster"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSDaVP-w-rc7iM9Qm_LKykkKhl0C-ZYFH_ag&s"
+    data-trailer="https://www.youtube.com/embed/Y274jZs5s7s">
+ 
+
+      <img
+    class="movie-poster"
+    src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8780856_p_v13_at.jpg"
+    data-trailer="https://www.youtube.com/embed/2vAo4rJPqQ4">
+  
+  </div>
+
+<!-- Modal -->
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="trailerFrame"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</section>
+
+
+<section class="row">
+  <h2>Movies</h2>
+  <!-- arrows -->
+  <button class="row-arrow left" onclick="scrollMovies(-1)">❮</button>
+  <button class="row-arrow right" onclick="scrollMovies(1)">❯</button>
+
+  <!-- movie images --> 
+
+  <div class="movies">
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BNmIwYTI3ODItMzRkOS00MzlhLWI4NzQtNDFmOGJhZGJhM2VkXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/EddPKMkGrg4">
+
+
+       <img
+    class="movie-poster"
+    src="https://miro.medium.com/v2/resize:fit:1200/1*KKTQLMfiB6858yMcM7xvIw.jpeg"
+    data-trailer="https://www.youtube.com/embed/YGJOcMtnG1Q"> 
+
+   
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/S/pv-target-images/2f91c02db362f0dc811be889c39bcbddc7d22e87b9d3c674499eec91a36e6e31.jpg"
+    data-trailer="https://www.youtube.com/embed/HNnt00swZ5Q">
+
+    <img
+    class="movie-poster"
+    src="https://cdn.gulte.com/wp-content/uploads/2021/10/sooryavanshi-photo-5.jpg"
+    data-trailer="https://www.youtube.com/embed/uuoKJyKLPgU">
+
+    <img
+    class="movie-poster"
+    src="https://c8.alamy.com/comp/2C3Y1JM/gunjan-saxena-the-kargil-girl-indian-poster-center-janhvi-kapoor-as-gunjan-saxena-2020-netflix-courtesy-everett-collection-2C3Y1JM.jpg"
+    data-trailer="https://www.youtube.com/embed/rtGIq9Xjnrw">
+
+    <img
+    class="movie-poster"
+    src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/hi-nanna-et00364503-1701678655.jpg"
+    data-trailer="https://www.youtube.com/embed/3Ld05Om2UWs">
+
+      <img
+    class="movie-poster"
+    src="https://www.acmodasi.in/amdb/images/movie/m/p/article-370-2024-FSIJlZ.jpg"
+    data-trailer="https://www.youtube.com/embed/Nwce9WwkcMg">
+
+
+       <img
+    class="movie-poster"
+    src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202409/hit-3-051023912-1x1.jpeg?VersionId=pUwXzNd8HlbLQKuHERiaiDTsvsr4FAse"
+    data-trailer="https://www.youtube.com/embed/kAtfaaUgDRU">
+
+    
+     <img
+    class="movie-poster"
+    src="https://c.saavncdn.com/480/Dangal-Hindi-2016-20200116120806-500x500.jpg"
+    data-trailer="https://www.youtube.com/embed/XuIVa_K59QE">
+
+ 
+  
+
+    <img
+    class="movie-poster"
+    src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/the-girlfriend-et00423419-1733756512.jpg"
+    data-trailer="https://www.youtube.com/embed/XgLlPN7oxwY">
+
+     
+
+</div>
+
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="trailerFrame"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<script src="net.js"></script>
+
+</body>
+</html>

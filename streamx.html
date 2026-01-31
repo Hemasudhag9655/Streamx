@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StreamX</title>
+  <link rel="stylesheet" href="net.css">
+  <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIbXCK83ymOqZSgHGGwGuoghsE0AJNNyNDGg&s">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <h1 class="logo">StreamX</h1>
+    <nav>
+      <a href="streamx.html" class="active">Home</a>
+      <a href="shows.html">Shows</a>
+      <a href="mynet.html">My StreamX</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BANNER SLIDER -->
+<section class="banner">
+  <div class="banner-slider">
+
+    <!-- Banner 1 -->
+    <div class="banner-item active" style="background-image: url('https://images.wallpapersden.com/image/download/stranger-things-season-5-4k-final-poster_bmhnamaUmZqaraWkpJRoZmtorWllbms.jpg')">
+
+      
+
+      <div class="banner-content">
+        <span class="series-tag">S SERIES</span>
+        <h1 class="banner-title" style="font-size: 50px;">STRANGER THINGS</h1>
+        <p class="banner-info">⭐ 8.7 | 2016 | 5 Seasons | TV-14</p>
+        <p class="banner-desc">
+          When a young boy vanishes, a small town uncovers a mystery.
+        </p>
+        <div class="banner-buttons">
+          <button class="play-btn"
+             onclick="playMovie('https://www.youtube.com/embed/PssKpzB0Ah0')">
+             ▶ Play
+          </button>
+
+          <button class="list-btn">＋ My List</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner 2 -->
+    <div class="banner-item" style="background-image: url('https://4kwallpapers.com/images/wallpapers/wednesday-netflix-5120x2880-22253.jpg')">
+
+    
+
+      <div class="banner-content">
+        <span class="series-tag">S SERIES</span>
+        <h1 class="banner-title" style="font-size: 50px;">WEDNESDAY</h1>
+        <p class="banner-info">⭐ 8.0 | 2022 | TV-14</p>
+        <p class="banner-desc">
+          Wednesday Addams navigates life at Nevermore Academy.
+        </p>
+        <div class="banner-buttons">
+         <button class="play-btn"
+          onclick="playMovie('https://www.youtube.com/embed/03u4xyj0TH4')">
+         ▶ Play
+        </button>
+
+          <button class="list-btn">＋ My List</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner 3 -->
+    <div class="banner-item" style="background-image: url('https://wallpapercave.com/wp/wp11391878.jpg')">
+
+      
+
+      <div class="banner-content">
+        <span class="series-tag">S SERIES</span>
+        <h1 class="banner-title" style="font-size: 46px;">ALCHEMY OF SOULS</h1>
+        <p class="banner-info">⭐ 8.7 | 2022 | TV-14</p>
+        <p class="banner-desc">
+          Lord Vishnu incarnates as Narasimha to protect Prahlada.
+        </p>
+        <div class="banner-buttons">
+          <button class="play-btn"
+            onclick="playMovie('https://www.youtube.com/embed/nlRw1CGbFU0')">
+             ▶ Play
+          </button>
+
+          <button class="list-btn">＋ My List</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Arrows -->
+  <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button>
+
+</section>
+
+
+<!-- MOVIE ROW -->
+<!-- MOVIE ROW -->
+
+<section class="row">
+  <h2>Top Picks For You</h2>
+  <!-- arrows -->
+  <button class="row-arrow left" onclick="scrollMovies(-1)">❮</button>
+  <button class="row-arrow right" onclick="scrollMovies(1)">❯</button>
+
+  <!-- movie images --> 
+
+  <div class="movies">
+
+    <img
+    class="movie-poster"
+    src="https://resizing.flixster.com/Cr_GWT7D-LCJt0_tLMFCTAPWWH8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMGI3NGVlZmQtZWIxNS00ZWRhLTk1Y2QtMDM1YjU1NzM2NzNiLmpwZw=="
+    data-trailer="https://www.youtube.com/embed/MaJ7ZT70ve4">
+
+      <img
+    class="movie-poster"
+    src="https://image.tmdb.org/t/p/w780/xB55oDrJiIYn2yeC9YNy1KJ4rl5.jpg"
+    data-trailer="https://www.youtube.com/embed/VLzgY1JMRss">
+  
+   <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BNWY4NDgyN2QtNDRkZS00OGRjLWFhN2UtODc3Mzk2ZjQ0ZjhkXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/rc61YHl1PFY">
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BYWQyNzkxMDItZmNiNS00NTRkLTk0NTYtMWEzOTg4YjYwNTE0XkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/7FzohPmliGs">
+
+    <img
+    class="movie-poster"
+    src="https://image.tmdb.org/t/p/original/fT7C1pt8eosHqATOGb8MnWQ5zHG.jpg"
+    data-trailer="https://www.youtube.com/embed/_J8tYxYB_YU">
+
+    <img
+    class="movie-poster"
+    src="https://preview.redd.it/goblin-my-first-time-watching-it-to-see-what-everyone-is-v0-inxr1noxiime1.jpeg?auto=webp&s=820abd4cc32b56999bad8ea5c1b45187864e780e"
+    data-trailer="https://www.youtube.com/embed/y1ClsA-zt-I">
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BNTE3OTIxZDYtNjA0NC00N2YxLTg1NGQtOTYxNmZkMDkwOWNjXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/afEJYg0tyJ4">
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BYTY2ZDg4OWItMGE3Ny00MjIxLTkzZDktN2Y1N2NiNGE2ZGNhXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/7V3Hwh0STTU">
+
+    <img
+    class="movie-poster"
+    src="https://images.justwatch.com/poster/309462804/s718/my-demon.jpg"
+    data-trailer="https://www.youtube.com/embed/xplPZTVBOOE">
+
+    <img
+    class="movie-poster"
+    src="https://images.prestigeonline.com/wp-content/uploads/sites/5/2024/12/17215028/when-the-phone-rings-1.jpeg"
+    data-trailer="https://www.youtube.com/embed/chk2ak1MPlY"> 
+    
+
+</div>
+
+<!-- Modal -->
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="trailerFrame"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</section>
+
+
+<section class="row">
+  <h2>Films & TV Series set in India</h2>
+  <!-- arrows -->
+  <button class="row-arrow left" onclick="scrollMovies(-1)">❮</button>
+  <button class="row-arrow right" onclick="scrollMovies(1)">❯</button>
+
+  <!-- movie images --> 
+
+  <div class="movies">
+
+    <img
+    class="movie-poster"
+    src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gunjan-saxena-et00093902-10-06-2020-12-54-01.jpg"
+    data-trailer="https://www.youtube.com/embed/rtGIq9Xjnrw">
+
+    <img
+    class="movie-poster"
+    src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/hi-nanna-et00364503-1701678655.jpg"
+    data-trailer="https://www.youtube.com/embed/3Ld05Om2UWs">
+
+      <img
+    class="movie-poster"
+    src="https://www.acmodasi.in/amdb/images/movie/m/p/article-370-2024-FSIJlZ.jpg"
+    data-trailer="https://www.youtube.com/embed/Nwce9WwkcMg">
+
+
+       <img
+    class="movie-poster"
+    src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202409/hit-3-051023912-1x1.jpeg?VersionId=pUwXzNd8HlbLQKuHERiaiDTsvsr4FAse"
+    data-trailer="https://www.youtube.com/embed/kAtfaaUgDRU">
+
+    
+     <img
+    class="movie-poster"
+    src="https://c.saavncdn.com/480/Dangal-Hindi-2016-20200116120806-500x500.jpg"
+    data-trailer="https://www.youtube.com/embed/XuIVa_K59QE">
+
+ 
+  
+
+    <img
+    class="movie-poster"
+    src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/the-girlfriend-et00423419-1733756512.jpg"
+    data-trailer="https://www.youtube.com/embed/XgLlPN7oxwY">
+
+      <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BNmIwYTI3ODItMzRkOS00MzlhLWI4NzQtNDFmOGJhZGJhM2VkXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/EddPKMkGrg4">
+
+
+       <img
+    class="movie-poster"
+    src="https://miro.medium.com/v2/resize:fit:1200/1*KKTQLMfiB6858yMcM7xvIw.jpeg"
+    data-trailer="https://www.youtube.com/embed/YGJOcMtnG1Q"> 
+
+   
+
+    <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/S/pv-target-images/2f91c02db362f0dc811be889c39bcbddc7d22e87b9d3c674499eec91a36e6e31.jpg"
+    data-trailer="https://www.youtube.com/embed/HNnt00swZ5Q">
+
+    <img
+    class="movie-poster"
+    src="https://cdn.gulte.com/wp-content/uploads/2021/10/sooryavanshi-photo-5.jpg"
+    data-trailer="https://www.youtube.com/embed/uuoKJyKLPgU">
+
+</div>
+
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="trailerFrame"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+</section>
+
+
+
+<section class="row">
+  <h2>Other than India</h2>
+  <!-- arrows -->
+  <button class="row-arrow left" onclick="scrollMovies(-1)">❮</button>
+  <button class="row-arrow right" onclick="scrollMovies(1)">❯</button>
+
+  <!-- movie images --> 
+
+  <div class="movies">
+
+    <img
+    class="movie-poster"
+    src="https://riyabhorkar.com/wp-content/uploads/2024/08/DAMSEL-2024-726x1024.jpeg"
+    data-trailer="https://www.youtube.com/embed/iM150ZWovZM">
+
+    <img
+    class="movie-poster"
+    src="https://upload.wikimedia.org/wikipedia/en/1/12/Jumanji_-The_Next_Level_film_poster.jpg"
+    data-trailer="https://www.youtube.com/embed/2QKg5SZ_35I">
+
+          <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/I/91nyqgco29L._AC_UF1000,1000_QL80_.jpg"
+    data-trailer="https://www.youtube.com/embed/ByAn8DF8Ykk"> 
+
+
+      <img
+    class="movie-poster"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSDaVP-w-rc7iM9Qm_LKykkKhl0C-ZYFH_ag&s"
+    data-trailer="https://www.youtube.com/embed/Y274jZs5s7s">
+
+
+       <img
+    class="movie-poster"
+    src="https://lancerfeed.press/wp-content/uploads/2025/11/img_5991_8.webp"
+    data-trailer="https://www.youtube.com/embed/8aulMPhE12g">
+
+    
+     <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BMmNjOWQzYmYtNGYxOS00MjVkLTg1MWUtMTkzMGE0MDgwNzQ5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    data-trailer="https://www.youtube.com/embed/BmVmhjjkN4E">
+
+ 
+  
+
+    <img
+    class="movie-poster"
+    src="https://i.pinimg.com/236x/96/f6/ef/96f6ef69726a61746e5f36b75e3e3ec0.jpg"
+    data-trailer="https://www.youtube.com/embed/jCyEX6u-Yhs">
+
+      <img
+    class="movie-poster"
+    src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8780856_p_v13_at.jpg"
+    data-trailer="https://www.youtube.com/embed/2vAo4rJPqQ4">
+
+
+ 
+   
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- Modal to show trailer -->
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe id="trailerFrame" width="800" height="450" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+
+
+
+<script src="net.js"></script>
+</body>
+</html>

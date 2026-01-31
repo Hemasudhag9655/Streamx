@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StreamX - My StreamX</title>
+  <link rel="stylesheet" href="net.css">
+   <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIbXCK83ymOqZSgHGGwGuoghsE0AJNNyNDGg&s">
+
+
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  width: 150px;
+}
+
+.header-right {
+  display: flex;
+  gap: 15px;
+}
+
+.trending {
+  position: relative;
+  padding: 60px 50px;
+  background: black;
+}
+
+
+
+.trending h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* Horizontal scrolling row */
+.trending-row {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 40px;
+}
+
+.trending-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.rank-card {
+  position: relative;
+  min-width: 200px;
+  transition: transform 0.3s;
+}
+
+/* Movie image */
+.rank-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* BIG ranking number – ON TOP */
+.rank {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  font-size: 110px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 4px white;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover zoom */
+.rank-card:hover {
+  transform: scale(1.15);
+  z-index: 5;
+}
+
+
+
+
+
+/* Hover zoom */
+.rank-card:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+
+
+
+/* Arrows */
+.trend-arrow {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 20;
+  border-radius: 8px;
+}
+
+.trend-arrow.left {
+  left: 10px;
+}
+
+.trend-arrow.right {
+  right: 10px;
+}
+
+.trend-arrow:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+
+/* GAP BELOW HEADER */
+.row {
+  padding-top: 50px;   /* adjust if needed */
+}
+
+
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <h1 class="logo">StreamX</h1>
+    <nav>
+      <a href="streamx.html">Home</a>
+      <a href="shows.html">Shows</a>
+      <a href="mynet.html" class="active">My StreamX</a>
+    </nav>
+  </div>
+</header>
+
+
+<br>
+<br>
+
+<br>
+
+<section class="row">
+  <h2>You watched</h2>
+  <!-- arrows -->
+  <button class="row-arrow left" onclick="scrollMovies(-1)">❮</button>
+  <button class="row-arrow right" onclick="scrollMovies(1)">❯</button>
+
+  <!-- movie images --> 
+
+  <div class="movies">
+
+      <img
+    class="movie-poster"
+    src="https://miro.medium.com/v2/resize:fit:1200/1*KKTQLMfiB6858yMcM7xvIw.jpeg"
+    data-trailer="https://www.youtube.com/embed/YGJOcMtnG1Q"> 
+
+     <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/M/MV5BNDFjN2YyNmEtNWNmNi00OTBiLWE4ZjYtYzU0MzMwOTM5NDZlXkEyXkFqcGc@._V1_.jpg"
+    data-trailer="https://www.youtube.com/embed/nlRw1CGbFU0">
+
+      <img
+    class="movie-poster"
+    src="https://riyabhorkar.com/wp-content/uploads/2024/08/DAMSEL-2024-726x1024.jpeg"
+    data-trailer="https://www.youtube.com/embed/iM150ZWovZM">
+
+     <img
+    class="movie-poster"
+    src="https://m.media-amazon.com/images/S/pv-target-images/2f91c02db362f0dc811be889c39bcbddc7d22e87b9d3c674499eec91a36e6e31.jpg"
+    data-trailer="https://www.youtube.com/embed/HNnt00swZ5Q">
+ 
+       <img
+    class="movie-poster"
+    src="https://image.tmdb.org/t/p/original/fT7C1pt8eosHqATOGb8MnWQ5zHG.jpg"
+    data-trailer="https://www.youtube.com/embed/_J8tYxYB_YU">
+
+
+  </div>
+
+<!-- Modal -->
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="trailerFrame"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</section>
+
+
+
+
+
+<script src="net.js"></script>
+
+</body>
+</html>
